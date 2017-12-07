@@ -19,6 +19,9 @@ public class PrePolulator implements CommandLineRunner {
     @Override
     public void run(String... strings) throws Exception {
 
+        // clean up the DB before pre-polations.
+        this.hotelRepository.deleteAll();
+
         Hotel marriot = new Hotel(
                 "Marriot", 120,
                 new Address("Paris", "Franch"),
